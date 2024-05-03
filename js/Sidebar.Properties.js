@@ -1,9 +1,9 @@
 import { UITabbedPanel } from './libs/ui.js';
 
 import { SidebarObject } from './Sidebar.Object.js';
-import { SidebarGeometry } from './Sidebar.Geometry.js';
-import { SidebarMaterial } from './Sidebar.Material.js';
-import { SidebarScript } from './Sidebar.Script.js';
+// import { SidebarGeometry } from './Sidebar.Geometry.js';
+// import { SidebarMaterial } from './Sidebar.Material.js';
+// import { SidebarScript } from './Sidebar.Script.js';
 
 function SidebarProperties( editor ) {
 
