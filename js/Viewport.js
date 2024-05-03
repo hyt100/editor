@@ -10,14 +10,14 @@ import { ViewportControls } from './Viewport.Controls.js';
 import { ViewportInfo } from './Viewport.Info.js';
 
 import { ViewHelper } from './Viewport.ViewHelper.js';
-import { XR } from './Viewport.XR.js';
+// import { XR } from './Viewport.XR.js';
 
 import { SetPositionCommand } from './commands/SetPositionCommand.js';
 import { SetRotationCommand } from './commands/SetRotationCommand.js';
 import { SetScaleCommand } from './commands/SetScaleCommand.js';
 
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { ViewportPathtracer } from './Viewport.Pathtracer.js';
+// import { ViewportPathtracer } from './Viewport.Pathtracer.js';
 
 function Viewport( editor ) {
 
@@ -35,7 +35,7 @@ function Viewport( editor ) {
 
 	let renderer = null;
 	let pmremGenerator = null;
-	let pathtracer = null;
+	// let pathtracer = null;
 
 	const camera = editor.camera;
 	const scene = editor.scene;
@@ -146,7 +146,7 @@ function Viewport( editor ) {
 
 	//
 
-	const xr = new XR( editor, transformControls ); // eslint-disable-line no-unused-vars
+	// const xr = new XR( editor, transformControls ); // eslint-disable-line no-unused-vars
 
 	// events
 
@@ -267,7 +267,7 @@ function Viewport( editor ) {
 	signals.editorCleared.add( function () {
 
 		controls.center.set( 0, 0, 0 );
-		pathtracer.reset();
+		// pathtracer.reset();
 
 		initPT();
 		render();
@@ -350,7 +350,7 @@ function Viewport( editor ) {
 		pmremGenerator = new THREE.PMREMGenerator( renderer );
 		pmremGenerator.compileEquirectangularShader();
 
-		pathtracer = new ViewportPathtracer( renderer );
+		// pathtracer = new ViewportPathtracer( renderer );
 
 		container.dom.appendChild( renderer.domElement );
 
@@ -373,7 +373,7 @@ function Viewport( editor ) {
 
 	signals.cameraChanged.add( function () {
 
-		pathtracer.reset();
+		// pathtracer.reset();
 
 		render();
 
@@ -640,7 +640,7 @@ function Viewport( editor ) {
 		switch ( viewportShading ) {
 
 			case 'realistic':
-				pathtracer.init( scene, camera );
+				// pathtracer.init( scene, camera );
 				break;
 
 			case 'solid':
@@ -668,7 +668,7 @@ function Viewport( editor ) {
 		updateAspectRatio();
 
 		renderer.setSize( container.dom.offsetWidth, container.dom.offsetHeight );
-		pathtracer.setSize( container.dom.offsetWidth, container.dom.offsetHeight );
+		// pathtracer.setSize( container.dom.offsetWidth, container.dom.offsetHeight );
 
 		render();
 
@@ -735,11 +735,11 @@ function Viewport( editor ) {
 
 		}
 
-		if ( renderer.xr.isPresenting === true ) {
+		// if ( renderer.xr.isPresenting === true ) {
 
-			needsUpdate = true;
+		// 	needsUpdate = true;
 
-		}
+		// }
 
 		if ( needsUpdate === true ) render();
 
@@ -751,7 +751,7 @@ function Viewport( editor ) {
 
 		if ( editor.viewportShading === 'realistic' ) {
 
-			pathtracer.init( scene, camera );
+			// pathtracer.init( scene, camera );
 
 		}
 
@@ -761,7 +761,7 @@ function Viewport( editor ) {
 
 		if ( editor.viewportShading === 'realistic' ) {
 
-			pathtracer.setBackground( scene.background, scene.backgroundBlurriness );
+			// pathtracer.setBackground( scene.background, scene.backgroundBlurriness );
 
 		}
 
@@ -771,7 +771,7 @@ function Viewport( editor ) {
 
 		if ( editor.viewportShading === 'realistic' ) {
 
-			pathtracer.setEnvironment( scene.environment );
+			// pathtracer.setEnvironment( scene.environment );
 
 		}
 
@@ -781,7 +781,7 @@ function Viewport( editor ) {
 
 		if ( editor.viewportShading === 'realistic' ) {
 
-			pathtracer.update();
+			// pathtracer.update();
 
 		}
 
@@ -804,7 +804,7 @@ function Viewport( editor ) {
 			renderer.autoClear = false;
 			if ( grid.visible === true ) renderer.render( grid, camera );
 			if ( sceneHelpers.visible === true ) renderer.render( sceneHelpers, camera );
-			if ( renderer.xr.isPresenting !== true ) viewHelper.render( renderer );
+			// if ( renderer.xr.isPresenting !== true ) viewHelper.render( renderer );
 			renderer.autoClear = true;
 
 		}
