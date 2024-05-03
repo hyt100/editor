@@ -49,22 +49,22 @@ function ViewportControls( editor ) {
 
 	// shading
 
-	const shadingSelect = new UISelect();
-	shadingSelect.setOptions( { 'realistic': 'realistic', 'solid': 'solid', 'normals': 'normals', 'wireframe': 'wireframe' } );
-	shadingSelect.setValue( 'solid' );
-	shadingSelect.onChange( function () {
+	// const shadingSelect = new UISelect();
+	// shadingSelect.setOptions( { 'realistic': 'realistic', 'solid': 'solid', 'normals': 'normals', 'wireframe': 'wireframe' } );
+	// shadingSelect.setValue( 'solid' );
+	// shadingSelect.onChange( function () {
 
-		editor.setViewportShading( this.getValue() );
+	// 	editor.setViewportShading( this.getValue() );
 
-	} );
-	container.add( shadingSelect );
+	// } );
+	// container.add( shadingSelect );
 
-	signals.editorCleared.add( function () {
+	// signals.editorCleared.add( function () {
 
-		shadingSelect.setValue( 'solid' );
-		editor.setViewportShading( shadingSelect.getValue() );
+	// 	shadingSelect.setValue( 'solid' );
+	// 	editor.setViewportShading( shadingSelect.getValue() );
 
-	} );
+	// } );
 
 	update();
 

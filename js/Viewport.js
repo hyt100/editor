@@ -77,7 +77,8 @@ function Viewport( editor ) {
 	const transformControls = new TransformControls( camera, container.dom );
 	transformControls.addEventListener( 'axis-changed', function () {
 
-		if ( editor.viewportShading !== 'realistic' ) render();
+		// if ( editor.viewportShading !== 'realistic' ) render();
+		render();
 
 	} );
 	transformControls.addEventListener( 'objectChange', function () {
@@ -269,7 +270,7 @@ function Viewport( editor ) {
 		controls.center.set( 0, 0, 0 );
 		// pathtracer.reset();
 
-		initPT();
+		// initPT();
 		render();
 
 	} );
@@ -366,7 +367,7 @@ function Viewport( editor ) {
 
 	signals.sceneGraphChanged.add( function () {
 
-		initPT();
+		// initPT();
 		render();
 
 	} );
@@ -416,7 +417,7 @@ function Viewport( editor ) {
 
 		}
 
-		initPT();
+		// initPT();
 		render();
 
 	} );
@@ -443,7 +444,7 @@ function Viewport( editor ) {
 
 		}
 
-		initPT();
+		// initPT();
 		render();
 
 	} );
@@ -462,7 +463,7 @@ function Viewport( editor ) {
 
 	signals.materialChanged.add( function () {
 
-		initPT();
+		// initPT();
 		render();
 
 	} );
@@ -516,7 +517,7 @@ function Viewport( editor ) {
 
 		}
 
-		updatePTBackground();
+		// updatePTBackground();
 		render();
 
 	} );
@@ -563,7 +564,7 @@ function Viewport( editor ) {
 
 		}
 
-		updatePTEnvironment();
+		// updatePTEnvironment();
 		render();
 
 	} );
@@ -633,33 +634,33 @@ function Viewport( editor ) {
 
 	} );
 
-	signals.viewportShadingChanged.add( function () {
+	// signals.viewportShadingChanged.add( function () {
 
-		const viewportShading = editor.viewportShading;
+	// 	const viewportShading = editor.viewportShading;
 
-		switch ( viewportShading ) {
+	// 	switch ( viewportShading ) {
 
-			case 'realistic':
-				// pathtracer.init( scene, camera );
-				break;
+	// 		case 'realistic':
+	// 			// pathtracer.init( scene, camera );
+	// 			break;
 
-			case 'solid':
-				scene.overrideMaterial = null;
-				break;
+	// 		case 'solid':
+	// 			scene.overrideMaterial = null;
+	// 			break;
 
-			case 'normals':
-				scene.overrideMaterial = new THREE.MeshNormalMaterial();
-				break;
+	// 		case 'normals':
+	// 			scene.overrideMaterial = new THREE.MeshNormalMaterial();
+	// 			break;
 
-			case 'wireframe':
-				scene.overrideMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
-				break;
+	// 		case 'wireframe':
+	// 			scene.overrideMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+	// 			break;
 
-		}
+	// 	}
 
-		render();
+	// 	render();
 
-	} );
+	// } );
 
 	//
 
@@ -743,49 +744,49 @@ function Viewport( editor ) {
 
 		if ( needsUpdate === true ) render();
 
-		updatePT();
+		// updatePT();
 
 	}
 
-	function initPT() {
+	// function initPT() {
 
-		if ( editor.viewportShading === 'realistic' ) {
+	// 	if ( editor.viewportShading === 'realistic' ) {
 
-			// pathtracer.init( scene, camera );
+	// 		// pathtracer.init( scene, camera );
 
-		}
+	// 	}
 
-	}
+	// }
 
-	function updatePTBackground() {
+	// function updatePTBackground() {
 
-		if ( editor.viewportShading === 'realistic' ) {
+	// 	if ( editor.viewportShading === 'realistic' ) {
 
-			// pathtracer.setBackground( scene.background, scene.backgroundBlurriness );
+	// 		// pathtracer.setBackground( scene.background, scene.backgroundBlurriness );
 
-		}
+	// 	}
 
-	}
+	// }
 
-	function updatePTEnvironment() {
+	// function updatePTEnvironment() {
 
-		if ( editor.viewportShading === 'realistic' ) {
+	// 	if ( editor.viewportShading === 'realistic' ) {
 
-			// pathtracer.setEnvironment( scene.environment );
+	// 		// pathtracer.setEnvironment( scene.environment );
 
-		}
+	// 	}
 
-	}
+	// }
 
-	function updatePT() {
+	// function updatePT() {
 
-		if ( editor.viewportShading === 'realistic' ) {
+	// 	if ( editor.viewportShading === 'realistic' ) {
 
-			// pathtracer.update();
+	// 		// pathtracer.update();
 
-		}
+	// 	}
 
-	}
+	// }
 
 	//
 

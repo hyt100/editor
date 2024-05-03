@@ -89,7 +89,7 @@ function Editor() {
 		historyChanged: new Signal(),
 
 		viewportCameraChanged: new Signal(),
-		viewportShadingChanged: new Signal(),
+		// viewportShadingChanged: new Signal(),
 
 		intersectionsDetected: new Signal(),
 
@@ -544,12 +544,12 @@ Editor.prototype = {
 
 	},
 
-	setViewportShading: function ( value ) {
+	// setViewportShading: function ( value ) {
 
-		this.viewportShading = value;
-		this.signals.viewportShadingChanged.dispatch();
+	// 	this.viewportShading = value;
+	// 	this.signals.viewportShadingChanged.dispatch();
 
-	},
+	// },
 
 	//
 
