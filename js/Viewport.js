@@ -805,6 +805,7 @@ function Viewport( editor ) {
 			if ( grid.visible === true ) renderer.render( grid, camera );
 			if ( sceneHelpers.visible === true ) renderer.render( sceneHelpers, camera );
 			// if ( renderer.xr.isPresenting !== true ) viewHelper.render( renderer );
+			viewHelper.render( renderer );
 			renderer.autoClear = true;
 
 		}
