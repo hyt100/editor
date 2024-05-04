@@ -17,17 +17,17 @@ class History {
 
 		const scope = this;
 
-		this.editor.signals.startPlayer.add( function () {
+		// this.editor.signals.startPlayer.add( function () {
 
-			scope.historyDisabled = true;
+		// 	scope.historyDisabled = true;
 
-		} );
+		// } );
 
-		this.editor.signals.stopPlayer.add( function () {
+		// this.editor.signals.stopPlayer.add( function () {
 
-			scope.historyDisabled = false;
+		// 	scope.historyDisabled = false;
 
-		} );
+		// } );
 
 	}
 

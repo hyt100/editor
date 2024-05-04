@@ -20,18 +20,18 @@ function Editor() {
 
 		// script
 
-		editScript: new Signal(),
+		// editScript: new Signal(),
 
 		// player
 
-		startPlayer: new Signal(),
-		stopPlayer: new Signal(),
+		// startPlayer: new Signal(),
+		// stopPlayer: new Signal(),
 
 		// xr
 
-		enterXR: new Signal(),
-		offerXR: new Signal(),
-		leaveXR: new Signal(),
+		// enterXR: new Signal(),
+		// offerXR: new Signal(),
+		// leaveXR: new Signal(),
 
 		// notifications
 
@@ -127,7 +127,7 @@ function Editor() {
 	this.cameras = {};
 
 	this.viewportCamera = this.camera;
-	this.viewportShading = 'default';
+	// this.viewportShading = 'default';
 
 	this.addCamera( this.camera );
 
